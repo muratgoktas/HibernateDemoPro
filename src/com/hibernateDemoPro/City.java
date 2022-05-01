@@ -1,14 +1,24 @@
 package com.hibernateDemoPro;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
+@Table(name="city") // Veri tabandaki karþýlýðý
+
 public class City {
+	@Id
+	@Column(name="ID") // Veritabandaki karþýlýðý
 	private int id;
+	
+	@Column(name="Name")
 	private String name;
+	@Column(name="CountryCode")
 	private String countryCode;
+	@Column(name="District")
 	private String district;
+	@Column(name="Population")
 	private int population;
+	
 	public int getId() {
 		return id;
 	}
