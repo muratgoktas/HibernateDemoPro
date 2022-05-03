@@ -22,7 +22,7 @@ public class Main {
 			
 			session.beginTransaction();
 			// Select * from City ile yaný kod.
-			List<City> cities = session.createQuery("from city").getResultList();
+			List<City> cities = session.createQuery("from City").getResultList();
 		
 			for (City city: cities) {
 				System.out.println(city.getName());
