@@ -59,12 +59,18 @@ public class Main {
 			 */
 			// INSERT INTO end.
 			// UPDATE 
-			City city =session.get(City.class, 4099);
-			city.setPopulation(999999);
-			
-			session.save(city);
-			
-			
+			// Hibernate: update city set CountryCode=?, District=?, Name=?, Population=? where ID=?
+			/*
+			 * City city =session.get(City.class, 4099); city.setPopulation(999999);
+			 * 
+			 * session.save(city);
+			 */
+			// UPDATE end.
+			// DELETE
+			// Hibernate: delete from city where ID=?
+			City city = session.get(City.class, 4099);
+			session.delete(city);
+			// DELETE end.
 			session.getTransaction().commit();
 			
 		} finally {
