@@ -21,9 +21,12 @@ public class Main {
 		try {
 			
 			session.beginTransaction();
+			// SQL ->  (Structured Query Language)
+			// HQL ->  (Hibernate Query Language)
 			// Select * from City ile yaný kod.
-			List<City> cities = session.createQuery("from City").getResultList();
-		
+			//List<City> cities = session.createQuery("from City as c Where c.countryCode='TUR' and c.district = 'Erzurum'").getResultList();
+			//List<City> cities = session.createQuery("from City as c Where c.countryCode='TUR' and c.district LIKE '%kar%'").getResultList();
+			List<City> cities = session.createQuery("from City as c Where c.name LIKE '%kar%'").getResultList();
 			for (City city: cities) {
 				System.out.println(city.getName());
 			}
